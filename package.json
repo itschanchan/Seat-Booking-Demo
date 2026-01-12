@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/itschanchan/Seat-Booking-Demo", 
+  "homepage": "https://github.com/itschanchan/Seat-Booking-Demo",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -12,7 +12,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d list"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.90.1",
