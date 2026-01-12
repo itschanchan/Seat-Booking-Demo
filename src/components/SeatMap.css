@@ -1,0 +1,304 @@
+/* General layout */
+.seatmap-container {
+  min-height: 100vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.seatmap-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 32px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Panels */
+.panel {
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  background-color: #fff; /* Right panel explicitly white */
+  color: black; /* all text inside panel black */
+}
+
+/* Header */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  font-size: 1.875rem; /* 3xl */
+  font-weight: bold;
+  color: #1f2937; /* gray-800 */
+}
+
+.header p {
+  font-size: 0.875rem;
+  color: #374151; /* black-ish gray */
+}
+
+/* Buttons */
+.btn {
+  padding: 8px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: red; /* reset button red */
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #ffeaea; /* light red on hover */
+}
+
+.btn-disabled {
+  background-color: #e5e7eb;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Counters */
+.counter-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.counter {
+  border: 1px solid;
+  border-radius: 16px;
+  padding: 16px;
+  text-align: center;
+  color: black; /* text black */
+}
+
+.counter-available {
+  border-color: #22c55e; /* green-400 */
+}
+
+.counter-available p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.counter-booked {
+  border-color: #f87171; /* red-400 */
+}
+
+.counter-booked p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Stage */
+.stage {
+  border: 2px dashed #9ca3af; /* gray-400 */
+  text-align: center;
+  padding: 12px 0;
+  border-radius: 16px;
+  margin-bottom: 32px;
+  font-weight: 600;
+  color: #374151; /* text black */
+}
+
+/* Seats */
+.seat-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: max-content;
+  margin-bottom: 16px;
+}
+
+.row-label {
+  width: 24px;
+  font-weight: bold;
+  color: #374151; /* text black */
+}
+
+.seat-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.seat-btn.booked {
+  background-color: #f87171; /* red-400 */
+  color: black; /* text black */
+  cursor: not-allowed;
+}
+
+.seat-btn.available {
+  background-color: #22c55e; /* green-400 */
+  color: black; /* text black */
+}
+
+.seat-btn.available:hover {
+  transform: scale(1.1);
+}
+
+.seat-btn.selected {
+  background-color: #facc15; /* yellow-400 */
+  color: black;
+  transform: scale(1.1);
+}
+
+.row-price {
+  margin-left: 16px;
+  font-size: 0.875rem;
+  color: #374151; /* text black */
+}
+
+/* Checkout */
+.checkout-btn {
+  width: 100%;
+  padding: 12px 0;
+  border-radius: 16px;
+  font-weight: 600;
+  transition: all 0.3s;
+  border: none;
+}
+
+.checkout-btn.enabled {
+  background-color: #22c55e;
+  color: black; /* text black */
+}
+
+.checkout-btn.enabled:hover {
+  background-color: #16a34a;
+}
+
+.checkout-btn.disabled {
+  background-color: #e5e7eb;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 16px;
+  padding: 24px;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  color: black; /* all text black */
+}
+
+.modal h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.modal .summary {
+  margin-bottom: 24px;
+}
+
+.modal .summary div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.modal .summary .total {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 8px;
+  font-weight: bold;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.modal-btn {
+  flex: 1;
+  padding: 8px 0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 1px solid #d1d5db;
+}
+
+.modal-btn.cancel:hover {
+  background-color: #f9fafb;
+}
+
+.modal-btn.confirm {
+  background-color: #22c55e;
+  color: black; /* text black */
+  border: none;
+}
+
+.modal-btn.confirm:hover {
+  background-color: #16a34a;
+}
+
+/* Tooltip base */
+.seat-btn {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Tooltip bubble */
+.seat-btn::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: pre-line;
+  background: rgba(20, 20, 20, 0.95);
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 10;
+  min-width: 140px;
+  text-align: center;
+}
+
+/* Tooltip arrow */
+.seat-btn::before {
+  content: '';
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: rgba(20, 20, 20, 0.95) transparent transparent transparent;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* Show on hover */
+.seat-btn:hover::after,
+.seat-btn:hover::before {
+  opacity: 1;
+}
